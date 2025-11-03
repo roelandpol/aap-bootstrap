@@ -6,6 +6,7 @@ metadata:
 spec:
   generators:
     - git:
+        revision: HEAD
         repoURL: https://github.com/roelandpol/aap-bootstrap.git
         directories:
           - path: apps/*
