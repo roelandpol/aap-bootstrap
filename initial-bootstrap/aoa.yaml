@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: aoa
+  namespace: argo-aap
+spec:
+  generators:
+  - list:
+      elements:
+      - aoa
+  template:
+    metadata:
+      name: aoa
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/roelandpol/aap-bootstrap.git
+        targetRevision: HEAD
+        path: apps
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: argo-aap
