@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: master
+  namespace: aap-argo
+spec:
+  syncPolicy:
+    preserveResourcesOnDeletion: true
+  generators:
+  - list:
+      elements:
+        - bootstrap: initial
+  template:
+    metadata:
+      name: appset-bootstrap
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/roelandpol/aap-bootstrap.git
+        targetRevision: HEAD
+        path: appsets
+        directory:
+          include: 'master.yaml'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: aap-argo
+      syncPolicy:
+        automated: {}
+
