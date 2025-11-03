@@ -4,6 +4,8 @@ metadata:
   name: master
   namespace: aap-argo
 spec:
+  syncPolicy:
+    preserveResourcesOnDeletion: false
   generators:
   - list:
       elements:
