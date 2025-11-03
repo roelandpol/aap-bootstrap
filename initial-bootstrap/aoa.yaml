@@ -19,4 +19,4 @@ spec:
         path: apps
       destination:
         server: https://kubernetes.default.svc
-        namespace: argo-aap
+        namespace: aap-argo
