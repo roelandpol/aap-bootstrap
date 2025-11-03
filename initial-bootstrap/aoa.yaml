@@ -4,7 +4,7 @@ metadata:
   name: aoa
   namespace: aap-argo
   labels:
-    app.kubernetes.io/instance: "null"
+    app.kubernetes.io/instance: "apps"
 spec:
   generators:
   - list:
