@@ -1,22 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: main
+  name: master
   namespace: aap-argo
 spec:
   generators:
   - list:
       elements:
-      - app1: app
+      - appset: appset
   template:
     metadata:
-      name: appset
+      name: master-appset
     spec:
       project: default
       source:
         repoURL: https://github.com/roelandpol/aap-bootstrap.git
         targetRevision: HEAD
-        path: appset
+        path: appsets
       destination:
         server: https://kubernetes.default.svc
         namespace: aap-argo
