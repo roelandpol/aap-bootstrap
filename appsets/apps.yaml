@@ -7,7 +7,7 @@ spec:
   generators:
     - git:
         revision: HEAD
-        repoURL: https://github.com/roelandpol/aap-bootstrap.git
+        repoURL: https://github.com/roelandpol/aap-iac.git
         directories:
           - path: apps/*
   template:
@@ -16,7 +16,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/roelandpol/aap-bootstrap.git
+        repoURL: https://github.com/roelandpol/aap-iac.git
         targetRevision: main
         path: '{{path}}'
       destination:
