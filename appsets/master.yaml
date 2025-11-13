@@ -9,10 +9,10 @@ spec:
   generators:
   - list:
       elements:
-      - appset: appset
+      - appset: master
   template:
     metadata:
-      name: master-appset
+      name: master
     spec:
       project: default
       source:
